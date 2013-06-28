@@ -1,1 +1,1 @@
-To view this draft in nicely rendered form, see: http://yrlesru.github.com/SPA/
+To view this draft in nicely rendered form, see: http://yrlesru.github.io/SPA/
