@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Specification Privacy Assessment (SPA)</title>
+    <meta charset='utf-8'>
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common.js' class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "unofficial",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "SPA",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          subtitle:  "Creating Privacy Considerations for W3C Technical Specifications",
+
+          // if you wish the publication date to be other than today, set this
+          publishDate:  "2013-05-06",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          // copyrightStart: "2005"
+
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          //edDraftURI:           "http://dev.w3.org/2009/dap/ReSpec.js/documentation.html",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Frank Dawson", url: "http://www.linkedin.com/in/yrlesru/",
+                company: "Nokia", companyURL: "http://wwww.nokia.com/" },
+          ],
+
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          //authors:  [
+          //    { name: "Your Name", url: "http://example.org/",
+          //      company: "Your Company", companyURL: "http://example.com/" },
+          //],
+          
+          // name of the WG
+          wg:           "Privacy Interest Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://w3.org/Privacy/",
+          
+          // name (without the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-privacy",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "",
+      };
+    </script>
+  
+</head>
+<body>
+
+<section id="abstract">
+
+<p>This document is intended to define a process to conduct an assessment of the privacy impact of a 
+   <a href="http://www.w3.org/">W3C</a> specification.</p>
+
+<p>This document is an initial draft of the Specification Privacy Assessment (SPA) for discussion within the W3C 
+   <a href="http://www.w3.org/Privacy/">Privacy Interest Group</a> (PING). The document does not represent any current consensus within the PING, as  discussion on the topic is ongoing. 
+
+<p>If you wish to make comments regarding this document, kindly email them to 
+   <a href="mailto:public-privacy@w3.org">public-privacy@w3.org></a>
+   <a href="http://lists.w3.org/Archives/Public/public-privacy/">(archive)</a>. 
+</section>
+
+<section id="Introduction">
+<h2>Introduction</h2>
+
+<p>The W3C Privacy Interest Group is chartered to improve the support of privacy in Web standards by, among other things, providing guidelines and advice for addressing privacy in standards development.</p>
+
+<p>The W3C defines standards for the World Wide Web that forms part of the backbone for an emerging online digital marketplace. The standards will need to be developed with the intentions of protecting the personal information of the consumers who trust in this technology. The Standards Privacy Assessment (SPA) document provides W3C specification Editors with guidance on:
+
+<ul><li>Why a Privacy Considerations section is needed in a W3C specification,
+<li>When a SPA process should be used for a W3C specification,
+<li>How to conduct a SPA analysis on a W3C specification, and
+<li>What findings should be included in the Privacy Considerations section of a W3C specification?</li>
+</ul>
+
+<p>The SPA is a methodology for analyzing a specification for possible privacy impact. It takes into account applicable privacy principles and associated privacy safeguarding requirements in order to assess the potential threats arising from the specification that require mitigation by introducing privacy safeguards or controls. In addition, the SPA process is intended to be helpful in creating analysis information that will be useful in conducting a privacy risk assessment of deploying the specification that analyzes the harm towards an individual that could be caused by the technology being defined by the specification.</p>
+</section>
+
+<section>
+<h2 id="Guidance-to-Editors-on-When-to-Apply-SPA">Guidance to Editors on When to Apply SPA</h2>
+
+<p>The work of W3C covers the development and maintenance of specifications and guidelines defining the World Wide Web. This work will require the Editors of W3C specifications to take into account the privacy impact of their specification. </p>
+
+<p>While the scope of these specifications will vary, it is important for the Editors to be mindful of when their work has a privacy impact.</p>
+
+<p>In addition, when W3C participants liaise and collaborate with other organizations and committees dealing with work similar to that of W3C, the participants need to be mindful when their collaboration topics have privacy impact.</p>
+
+<p>The privacy impact of a specification is directly related to whether the specification creates or processes personal information and/or whether the specification deals with technical mechanisms for identifying personal information with the individual associated with that personal information.</p>
+
+<p>The following logic diagram may be useful to an Editor or W3C participant to determine the privacy impact of the work they are involved in.</p>
+
+<figure>
+<img src="WhenToConductSPA.jpg" alt="Figure-Determining when to apply SPA"  height=546 width=600>
+<br><figcaption>&nbsp;&mdash;&nbsp;Determining when to apply SPA</figcaption>
+</figure>
+
+<p>In order to determine whether to apply the SPA process, the specification under review (SUR) should be evaluated on three questions. First, determine if the SUR will involve technology that will process personal information, or if it will involve technology that could link to personal information. An affirmative answer means application of the SPA process is warranted. If the evaluation determines that the SUR will not process personal information or involve technology that could link to personal information or an individual, then a second question should be assessed as to whether the SUR will generate personal information. An affirmative answer means application of the SPA process is warranted.  If the evaluation determines that the SUR will not generate personal information, then a third question should be assessed as to whether the SUR will involve technology that will be used in a network device by a data principal, or individual. An affirmative answer means application of the SPA process is warranted. If the answers to these three questions are negative, then no SPA process is warranted. If the answer to any of the three questions is affirmative, then the SPA process is warranted.</p>
+
+<p>In the event that a SPA process is not considered warranted, then the Privacy Considerations section should clearly articulate this using text such as the following:</p>
+
+<p><q>This specification does not define technology that will process personal information, nor will it create any link to personal information. Furthermore, the specification does not define technology that will be deployed in a network device and used by an individual.</q></p>
+</section>
+
+<section id="Application-of-SPA-in-W3C-Development-Process">
+<h2>Application of SPA in W3C Development Process</h2>
+
+<p>The W3C <i>Technical Report</i> (TR) development process is defined in section 7 of the W3C Process Document <a href="http://www.w3.org/2005/10/Process-20051014/tr.html#Reports">[1]</a>.</p>
+
+<figure>
+<img src="SpecCreationProcess.jpg" alt="Figure-W3C TR Development Process" height=132 width=800>
+<br><figcaption>&nbsp;&mdash;&nbsp;W3C TR Development Process</figcaption>
+</figure>
+
+<p>The application of the SPA process should not wait until the final milestones but instead should be applied from the first milestone, when a Recommendation is being drafted with its first working draft. The various activities that apply to each milestone include:</p>
+
+<p><b><a href="http://www.w3.org/2005/10/Process-20051014/tr.html#RecsWD">Working Draft</a> (WD)</b></p>
+
+<ul><li>Best time to start is when a Working Draft (preferably the <i><a href="http://www.w3.org/2005/10/Process-20051014/tr.html#first-wd">First Public Working Draft</a></i>) for a Recommendation has been created, and
+<li>Work can be introduced, privacy fundamentals explained, privacy goals explained, SPA approach explained, Privacy Champ identified.</ul>
+
+<p>The Privacy Champ being a member of the project team whom is the champion for privacy considerations within the project.</p>
+
+<p><b><a href="http://www.w3.org/2005/10/Process-20051014/tr.html#RecsCR">Candidate Recommendation</a> (CR)</b></p>
+
+<ul><li>Specification takes shape through contributions and reaches control mode, and
+<li>As the Recommendation team creates specification functionality, data flows are analyzed and categorized, areas for Privacy Engineering are identified, privacy requirements are identified, threats are identified, safeguards are defined, and findings documented in SPA report for follow-up action.</ul>
+
+<p><b><a href="http://www.w3.org/2005/10/Process-20051014/tr.html#RecsPR">Proposed Recommendation</a> (PR)</b></p>
+
+<ul><li>Privacy Considerations section reflects mitigation steps to address SPA findings.</ul>
+
+<p><b><a href="http://www.w3.org/2005/10/Process-20051014/tr.html#RecsW3C">Recommendation</a> (REC)</b></p>
+
+<ul><li>Publication staff and Specification Editor verify Privacy Considerations compliance against SPA findings and update accordingly.</ul>
+
+<p><b>Maintenance of Technical Recommendation</b></p>
+
+<ul><li>Deployment of specification can lead to issue reporting that need address in timely manager with technical opinions and possible change requests for spec update.</ul>
+</section>
+
+<section  id="SPA-Process">
+<h2>SPA process</h2>
+
+<p>The SPA process involves the following analytical steps:</p>
+
+<ol><li>Create a clear understanding of the description of the technical functioning of the SUR,
+<li>Identify the data flow between internal components (interactors) of the SUR and external components (interactors),
+<li>Classify the data identified in Step 2 to understand the data processed (I.E., the Privacy Data Lifecycle defined by IAPP knowledge base) and whether the SUR features can identify, link to, or through observation otherwise determine the person associated with the personal information,
+<li>Identify applicable privacy principles and associated privacy safeguarding requirements, such as those from <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=45123">[2]</a> that apply to the primary use cases for the SUR,
+<li>Outline the threats created by analyzing the data flows from Step 2, along with the data classification from Step 3 and the applicable privacy requirements from Step 4,
+<li>Identify appropriate privacy control mechanisms that can be introduced to safeguard data protection, and
+<li>Consider approaches, beyond the privacy controls in Step 6, that will enhance privacy, such as limits on collection, limits for retention, rules for secure transfer, rules for limiting identification or obfuscation, for those deploying the specification or standard.
+</ol>
+
+<p><b>Step 1: Description</b> &mdash; The SPA process is based on having a detailed understanding of the features and functions of the SUR. The description of the SUR generally includes an understanding of:</p>
+
+<ul><li>Primary use cases for the features of the SUR,
+<li>Internal interactors of the SUR. These include the internal processes and data stores, as well as interfaces to external interactors,
+<li>External interactors that the primary use cases of the SUR may either be dependent on or that the SUR maybe a dependent resource for. These include external processes and data stores.
+<lI>Identification of the data that flows between the internal interactors and external interactors, and
+<li>Borders between the internal and external interactors that form a trust boundary.
+</ul>
+
+<p><b>Step 2: Data Flow</b> &mdash; The old adage that &quot;privacy impact comes with data&quot; is true. Privacy impact is related to processing of personal information and the linkability of that personal information to a data principal or individual (I.E., the individual's identifiability). Detailing the data flow involved in a SUR is a key element to systematically applying the SPA. Ad hoc application of the SPA will result in spot application of safeguards and possibly lead to missing key vulnerabilities in the SUR. A primer on data flow diagram technique can be found in <a href="http://www.prestwood.com/ASPSuite/KB/document_view.asp?qid=100887">[3]</a>.</p>
+
+<p><b>Step 3: Data Classification</b> &mdash; Understanding the scope of the data that is associated with the SUR is important in determining where unneeded data is being processed by the SUR or through the SUR by external interactors. One way to minimize the privacy impact of the SUR is to minimize the collection of personal information in the first place and to limit the retention of that data for further processing. To assess this, the data flowing through the SUR needs to be identified and classified. If the team creating the W3C specification utilizes design principles, then having considerations for data management within the design principles should be considered.</p>
+
+<p>The Privacy Data Lifecycle (sometimes called the Consumer Data Lifecycle) defines the actions related to personal data and is a fundamental component of the privacy knowledge base. When analyzing the data flow in a W3C specification, the complete data lifecycle for the associated personal information should be considered because each stage may introduce nuances to the overall privacy consideration of the specification.</p>
+
+<figure>
+<img src="PrivacyDataLifeCycle.jpg" alt="Figure-Privacy Data Lifecycle" height=564 width=600>
+<br><figcaption>&nbsp;&mdash;&nbsp;Privacy Data Lifecycle</figcaption>
+</figure>
+
+<p>It should be noted that within the EU, collection, itself is considered to be an act of data processing.</p>
+
+<p>There are a number of classification schemes that can be used to achieve this process step, but in general the analysis step should determine <b><i>why</i></b> the data is collected, <b><i>what</i></b> primary purpose there is for the processing of it, <b><i>where</i></b> it is being transferred or stored and <b><i>how long</i></b> it is being retained. In addition, the <a href="http://www.sattlers.org/mickey/culture/humor/items/Geekish/theoryOfNymity.html">nymity</a> characteristic or the degree that the individual associated with the personal data can identified, linked to, or named through observing the network traffic containing the data, needs to be classified (IE, is the personal data, in fact, personally identifiable information or PII). A PII classification approach can be found in <a href="http://docs.law.gwu.edu/facweb/dsolove/files/BNA-PII-FINAL.pdf">[4]</a>. There, personal data is classified as <i>identified</i>, <i>identifiable</i> and <i>non-identifiable</i>. In addition, a classification of <i>sensitive identifiable</i> should be considered.</p>
+
+<p><b>Step 4: Privacy Safeguarding Requirements</b> &mdash; At this point in the SPA process, there is sufficient information to evaluate the SUR to determine which privacy safeguarding requirements apply. This involves first understanding which privacy principles are applicable. One such set of privacy principles is defined by the ISO 29100/Privacy Framework <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=45123">[2]</a> standard. The standard defines the privacy principles as:</p>
+
+<ol><li>Consent and choice
+<li>Purpose legitimacy and specification
+<li>Collection limitation
+<li>Data minimization
+<li>Use, retention and disclosure limitation
+<li>Accuracy and quality
+<li>Openness, transparency and notice
+<li>Individual participation and access
+<li>Accountability
+<li>Information security
+<li>Privacy compliance
+</ol>
+
+<p>The SUR should be reviewed to determine which of these principles are applicable and ISO 29100 provides some guidance on applicable privacy safeguarding principles, under the description for each. Other sets of acceptable privacy principles can be found in <a href="http://oecdprivacy.org">[5]</a>, <a href="http://www.ftc.gov/reports/privacy3/fairinfo.shtm">[6]</a> and <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:31995L0046:EN:HTML">[7]</a>.</p>
+
+<p><b>Step 5: Threat Analysis</b> &mdash; Threat Analysis is a step where the privacy safeguarding requirements identified in Step 4 are analyzed to identify inherent vulnerabilities that a threat agent could utilize to create an incident with the technology being defined by the SUR.</p>
+
+<p><b>Step 6: Threat Mitigation</b> &mdash; Mitigation of threats identified in Step 5 is necessary to create a robust privacy enhanced specification. Threat mitigation involves application of one or more privacy safeguards or controls to thwart an identified threat scenario. </p>
+
+<p><b>Step 7: Deployment Considerations</b> &mdash; Steps 1-7 when applied at an early stage in the creation of the specification will assist in introducing more privacy enhancing design choices for the SUR. However, even when these steps are followed from New Work Item Proposal through Publication of the specification, there are still considerations to take for the deployment of a published standard. In some cases, the organization deploying the SUR will be in the best position most to take into account privacy safeguards. This last step in the SPA process challenges the Editor or W3C participants to consider what can be done during the implementation and deployment of the SUR to enhance the privacy of individuals who will be using ICT systems with the SUR embedded inside them.</p>
+</section>
+
+<section id="Privacy-Considerations-Outline">
+<h2>Privacy Considerations Outline</h2>
+
+<p>The results of applying the SPA process is the creation of text within the specification that outlines the privacy considerations that have been taken into account in the development of the specification, as well as those that should be considered when deploying the specification. This means that there should be a Privacy Considerations section in every W3C specification. In the case where it has been determined that the application of the SPA process is not warranted then this section would contain text such as:</p>
+
+<p><q>This specification does not define technology that will process personal information, nor will it create any link to personal information. Furthermore, the specification does not define technology that will be deployed in a network device and used by an individual.</q></p>
+
+<p>However, in those cases where a SPA process has been determined to be warranted then this section needs to include text that:</p>
+
+<ul><li>Catalogs the personally identifiable information (PII) collected, its classification, instances of data storage,  type of processing, instances of data transfer (against the privacy data lifecycle) from SPA Step 3;
+<li>Identifies and list privacy threats from SPA Step 5;
+<li>Identifies appropriate privacy safeguards/controls and context for mitigating identified threats from Step 6, and
+<li>Identifies recommendations such as uses of privacy controls, by organization deploying the specification, that would additionally thwart the associated threats from Step 7.
+</ul>
+</section>
+
+<section  id="References">
+<h2>References</h2>
+
+<ol>
+<li><a href="http://www.w3.org/2005/10/Process-20051014/tr.html#Reports"><i>W3C Technical Report Development Process</i></a>, W3C.
+
+<li><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=45123"><i>ISO/IEC 29100:2011, Information technology -- Security techniques -- Privacy framework</i></a>, ISO.
+
+<li><a href="http://www.prestwood.com/ASPSuite/KB/document_view.asp?qid=100887"><i>A 10 Minute Data Flow Diagrams (DFD) Quick Start</i></a>, Mike Prestwood.
+
+<li><a href="http://docs.law.gwu.edu/facweb/dsolove/files/BNA-PII-FINAL.pdf"><i>PII 2.0</i></a>, P. Schwartz and D. Solove.
+
+<li><a href="http://oecdprivacy.org"><i>OECD Privacy Principles</i></a>, OECD.
+
+<li><a href="http://www.ftc.gov/reports/privacy3/fairinfo.shtm"><i>Fair Information Practice Principles</i></a>, US Federal Trade Commission.
+
+<li><a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:31995L0046:EN:HTML"><i>Directive 95/46/EC on the protection of individuals with regard to the processing of personal data and on the free movement of such data</i></a>, European Parliament and Council.
+</ol>
+
+    </section>
+  </body>
+</html>
+
